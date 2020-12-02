@@ -3,7 +3,7 @@
 $host = 'localhost';
 $username = 'finalproject_user';
 $password = 'password123';
-$dbname = 'schema';
+$dbname = 'BugDB';
 
 
      //sanitize and escape information form input fields
@@ -32,7 +32,7 @@ $dbname = 'schema';
         exit("Could not connect to the database, invalid type use in name field.");
     }
      
-    // There is at least one upper      // There is at least one number   // There is at least one regular letter  // Length of string is ay least 8
+    // There is at least one uppercase      // There is at least one number   // There is at least one lowercase  // Length of string is ay least 8
      if(preg_match('/[A-Z]/', $password) && preg_match('/[0-9]/', $password) && preg_match('/[a-z]/', $password) && strlen($password) >= 8 ){
          $hash = password_hash($password,PASSWORD_DEFAULT);
          
@@ -41,7 +41,7 @@ $dbname = 'schema';
     //connect to database
     try {
         $conn = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
-        echo "Connected to $dbname at $host successfully.";
+        echo "Connected to $dbname database at $host successfully.";
         
     } catch (PDOException $pe) {
         die("Could not connect to the database $dbname :" . $pe->getMessage());

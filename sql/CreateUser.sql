@@ -1,0 +1,1 @@
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, INDEX, ALTER ON BugDB.* TO 'finalproject_user'@'localhost' IDENTIFIED BY 'password123';
