@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>INFO2180 Project 2</title>
     <link rel="stylesheet" href="styles/styles.css">
-    <script src="scripts/loginScript.js"></script>
+
 </head>
 
 <body>
@@ -26,7 +26,7 @@
     </section>
 
     <div clas="page">
-    <?php include('login.php');?>
+    <?php include('pages/login.php');?>
     </div>
 </body>
 

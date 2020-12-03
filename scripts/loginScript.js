@@ -20,18 +20,23 @@ window.onload = function(){
     });
 
 function getMsg() {
-    console.log(httpRequest.status)
-    if (httpRequest.readyState == XMLHttpRequest.DONE && httpRequest.status == 200) {
-        var response = httpRequest.responseText;
-        if (response == "Valid_User"){
-            mainContent.load("dashboard.php");
-        }
-     } 
-    } 
-}
+    if (httpRequest.readyState == XMLHttpRequest.DONE){
+        if (httpRequest.status == 200) {
+            var response = httpRequest.responseText;
+            console.log(response);
+            if (response == "Valid_User"){
+                alert("Welcome");
+                mainContent.load("dashboard.php");
+            }
+            else{
+                alert("error");
+                }
+            } 
+        } 
+    }
 
     function isEmpty(val, el){
-        if (value == ""){
+        if (val == ""){
             color(val,el);
         }
     }
@@ -44,6 +49,7 @@ function getMsg() {
     function validMail(value,el){
     var pattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/i;
     if ((pattern.test(value)) == false){
-        color(val,el)
+        color(val,el);
     }
     }
+}
