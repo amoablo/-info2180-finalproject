@@ -24,11 +24,11 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users table`
+-- Table structure for table `users`
 --
 
-DROP TABLE IF EXISTS `users table`;
-CREATE TABLE `users table` (
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE `users` (
   `id` int(11) DEFAULT NULL,
   `firstname` varchar(35) DEFAULT NULL,
   `lastname` varchar(35) DEFAULT NULL,
@@ -38,14 +38,14 @@ CREATE TABLE `users table` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `users table`
+-- Dumping data for table `users`
 --
 
-INSERT INTO `users table` (`id`, `firstname`, `lastname`, `password`, `email`, `date_joined`) VALUES
-(NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `users` (`id`, `firstname`, `lastname`, `password`, `email`, `date_joined`) VALUES
+(NULL, 'admin', 'admin', '$2y$10$kF44Grg2lW2t6wLMoYh0guBUzUYvyBbtA47f1Z/1cvx6RP37l00HG', 'admin@gmail.com', NULL);
 COMMIT;
 
-LOCK TABLES `users table` WRITE;
+LOCK TABLES `users` WRITE;
 
 UNLOCK TABLES;
 
@@ -53,8 +53,8 @@ UNLOCK TABLES;
 -- Table structure for table `issues table`
 --
 
-DROP TABLE IF EXISTS `issues table`;
-CREATE TABLE IF NOT EXISTS `issues table` (
+DROP TABLE IF EXISTS `issues`;
+CREATE TABLE IF NOT EXISTS `issues` (
   `id` int(11) DEFAULT NULL,
   `title` varchar(300) DEFAULT NULL,
   `description` text DEFAULT NULL,
@@ -68,7 +68,7 @@ CREATE TABLE IF NOT EXISTS `issues table` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 COMMIT;
 
-LOCK TABLES `issues table` WRITE;
+LOCK TABLES `issues` WRITE;
 
 UNLOCK TABLES;
 

@@ -14,7 +14,7 @@ $dbname = 'BugDB';
  
      $data = [$fname,$lname,$password,$email];
 
-      //check to ensure that no field is empty
+    //check to ensure that no field is empty
     foreach ($data as $field){
         if(empty($field)){
             exit("Could not connect to the database, field is empty:" );
@@ -46,4 +46,11 @@ $dbname = 'BugDB';
     } catch (PDOException $pe) {
         die("Could not connect to the database $dbname :" . $pe->getMessage());
     }
+
+    //specifying the fields and the table which the information will be inserted
+    $sql = "INSERT INTO users table (fname, lname, password, email) VALUES (?,?,?,?)";
+
+    //execution of insertion
+    $stmt= $conn->prepare($sql);
+    $stmt->execute($data);
 ?>
