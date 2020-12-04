@@ -7,8 +7,7 @@ window.onload = function(){
         el.preventDefault();
         var url = "scripts/serverLogin.php";
         var email = document.getElementById("mail").value;
-        var pword = document.getElementById("pword").vale;
-        alert(pword);
+        var pword = document.getElementById("pword").value;
         var e = document.getElementById("mail");
         var p = document.getElementById("pword")
 
@@ -35,7 +34,7 @@ function getMsg() {
             console.log(response);
             if (response == "Valid_User"){
                 alert("Welcome");
-                mainContent.load("dashboard.php");
+                mainContent.load("pages/dashboard.php");
             }
             else{
                 alert("error");
