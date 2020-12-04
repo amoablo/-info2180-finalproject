@@ -7,10 +7,19 @@ window.onload = function(){
         el.preventDefault();
         var url = "scripts/serverLogin.php";
         var email = document.getElementById("mail").value;
-        var pword = document.getElementById("pword")
-        isEmpty(email,el);
-        isEmpty(pword,el)
-        validMail(email,el)
+        var pword = document.getElementById("pword").vale;
+        alert(pword);
+        var e = document.getElementById("mail");
+        var p = document.getElementById("pword")
+
+        if(email == ""){
+            color(el,e);
+            httpRequest.abort();
+        }
+        else if(pword == ""){
+            color(el,p);
+        }
+        validMail(email,el,p)
 
         httpRequest.open('POST',url+"?email="+email+"&password="+pword);
         httpRequest.send();
@@ -20,7 +29,7 @@ window.onload = function(){
     });
 
 function getMsg() {
-    if (httpRequest.readyState == XMLHttpRequest.DONE){
+    if (httpRequest.readyState == this.DONE){
         if (httpRequest.status == 200) {
             var response = httpRequest.responseText;
             console.log(response);
@@ -35,21 +44,16 @@ function getMsg() {
         } 
     }
 
-    function isEmpty(val, el){
-        if (val == ""){
-            color(val,el);
-        }
+    function color(el,x){
+        el.preventDefault(); 
+        x.style.backgroundColor = "red";
+        
     }
 
-    function color(val,el){
-        val.style.backgroundColor = "red";
-            el.preventDefault(); 
-    }
-
-    function validMail(value,el){
+    function validMail(value,el,x){
     var pattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/i;
     if ((pattern.test(value)) == false){
-        color(val,el);
+        color(el,x);
     }
     }
 }
