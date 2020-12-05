@@ -3,7 +3,7 @@
 $host = 'localhost';
 $username = 'finalproject_user';
 $password = 'password123';
-$dbname = 'BugDB';
+$dbname = 'schema';
 
     //sanitize and escape information form input fields
     $email = filter_var(addslashes($_REQUEST['mail']), FILTER_SANITIZE_EMAIL);
