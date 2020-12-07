@@ -31,7 +31,7 @@ window.onload = function(){
                         console.log(response);
                         if (response === "Valid_User"){
                             alert("Welcome");
-                            content.load("dashboard.php");
+                            document.getElementById("page").innerHTML=("dashboard.php");
                         }
                         else{
                             alert("error");
