@@ -23,7 +23,6 @@
     </section>
 
     <div clas="page">
-    <?php include('pages/login.php');?>
     </div>
 </body>
 

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>INFO2180 Project 2</title>
     <link rel="stylesheet" href="styles/styles.css">
+    
 
 </head>
 
@@ -25,8 +26,8 @@
         <a href="#out">Logout</a>
     </section>
 
-    <div clas="page">
-    <?php include('pages/login.php');?>
+    <div id="page">
+    <?php include('login.php');?>
     </div>
 </body>
 

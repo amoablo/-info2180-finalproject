@@ -32,7 +32,7 @@ CREATE TABLE `users` (
   `id` int(11) DEFAULT NULL,
   `firstname` varchar(35) DEFAULT NULL,
   `lastname` varchar(35) DEFAULT NULL,
-  `password` varchar(30) DEFAULT NULL,
+  `password` varchar(150) DEFAULT NULL,
   `email` varchar(50) DEFAULT NULL,
   `date_joined` datetime(6) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -42,7 +42,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `firstname`, `lastname`, `password`, `email`, `date_joined`) VALUES
-(NULL, 'admin', 'admin', '$2y$10$kF44Grg2lW2t6wLMoYh0guBUzUYvyBbtA47f1Z/1cvx6RP37l00HG', 'admin@gmail.com', NULL);
+(NULL, 'admin', 'admin', '$2y$10$j1VZL4bytrDNk6TGvaTRceM', 'admin@gmail.com', NULL);
 COMMIT;
 
 LOCK TABLES `users` WRITE;
