@@ -1,0 +1,87 @@
+#heading{
+    display: flex;
+}
+
+#title{
+    flex: 30%;
+}
+
+#new_issue{
+    width: 300px;
+    color: white;
+    font-size:17px;
+    font-weight: bold;
+    border-radius: 17px;
+    background-color: #34cf78;
+    border-style: none;
+    padding: 17px 32px;
+    cursor: pointer;
+    margin: 20px;
+}
+.activeButton {
+	background-color: blue;
+	border-radius: 17px;
+	display: inline-block;
+	cursor: pointer;
+	color: white;
+	font-family:Arial;
+	font-size: 17px;
+	padding: 17px 32px;
+	text-decoration: none;
+	text-shadow: 0px 1px 0px #369429;
+    border-style: none;
+    font-weight: bold;
+}
+
+.passiveButton {
+	background-color:white;
+	border-radius:17px;
+	display:inline-block;
+	cursor:pointer;
+	color: black;
+	font-family: Arial;
+	font-size: 17px;
+	padding: 17px 32px;
+	text-decoration:none;
+    border-style: none;
+    font-weight:bold;
+   
+}
+
+.passiveButton:hover {
+	background-color:#1b69c9;
+}
+
+table.table-style-three {
+	font-family: verdana, arial, sans-serif;
+	font-size: 17px;
+	color: darkgrey;
+	border-width: 1px;
+	border-color: darkgrey;
+	border-collapse: collapse;
+	width: 100%;
+}
+table.table-style-three th {
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: white;
+	background-color: black;
+	color: white;
+}
+
+table.table-style-three tr:hover td{
+	cursor: pointer;
+}
+
+table.table-style-three tr:nth-child(2n) td{
+	background-color: lightgrey;
+}
+
+table.table-style-three td {
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: white;
+	background-color: white;
+}
