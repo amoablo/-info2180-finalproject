@@ -1,11 +1,11 @@
-window.onload = function () {
+ window.onload = function () {
     homePage();
 
 }
 
 function launchIssue(event) {
     var xhttp = new XMLHttpRequest();
-    xhttp.open("GET", "issues_Content.php?q=" + e, true);
+    xhttp.open("GET", "scripts/issues_Content.php?q=" + e, true);
     xhttp.send();
 
     xhttp.onreadystatechange = function () {
@@ -20,7 +20,7 @@ function launchIssue(event) {
 
 function updateStatus(id, mode) {
     var xhttp = new XMLHttpRequest();
-    xhttp.open("GET", "logIssue.php?q=" + mode + "&i=" + id, true);
+    xhttp.open("GET", "scripts/logIssue.php?q=" + mode + "&i=" + id, true);
     xhttp.send();
 
     xhttp.onreadystatechange = function () {
@@ -36,12 +36,11 @@ function updateStatus(id, mode) {
 
 function homePage() {
     var xhttp = new XMLHttpRequest();
-    xhttp.open("GET", "issuesScreen.php", true);
+    xhttp.open("GET", "scripts/issuesScreen.php", true);
     xhttp.send();
 
     xhttp.onreadystatechange = function () {
-        if (this.readyState == 4){
-			if (this.status == 200){
+        if (this.readyState == 4 && this.status == 200){
 			   document.getElementById("results").innerHTML = this.responseText;
 
 			   document.getElementById("all").classList.add("activeButton");
@@ -50,11 +49,11 @@ function homePage() {
 			   var xhttp = new XMLHttpRequest();
 
 
-			   xhttp.open("GET", "issuesScreen.php?q=all", true);
+			   xhttp.open("GET", "scripts/issuesScreen.php?q=all", true);
 			   xhttp.send();
 
 			   document.getElementById("all").addEventListener("click", () => {
-			   xhttp.open("GET", "issuesScreen.php?q=all", true);
+			   xhttp.open("GET", "scripts/issuesScreen.php?q=all", true);
 			   xhttp.send();
 			   
 			   });
@@ -66,7 +65,7 @@ function homePage() {
 				});
 
 				document.getElementById("my_tickets").addEventListener("click", () => {
-					xhttp.open("GET", "issuesScreen.php?q=my_tickets", true);
+					xhttp.open("GET", "scripts/issuesScreen.php?q=my_tickets", true);
 					xhttp.send();
 
 				});
@@ -76,7 +75,6 @@ function homePage() {
 						document.getElementById("table").innerHTML = this.responseText;
 					}
 				}
-			}
 		}
     };
 
@@ -88,13 +86,12 @@ function userAddition(user) {
     }
 	
     var xhttp = new XMLHttpRequest();
-    xhttp.open("GET", "newUser.php", true);
+    xhttp.open("GET", "scripts/newUser.php", true);
     xhttp.send();
 
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            document.getElementById("results").innerHTML =
-                this.responseText;
+            document.getElementById("results").innerHTML = this.responseText;
 
         }
     };
@@ -102,19 +99,15 @@ function userAddition(user) {
 
 function issueAddition(){
     var xhttp = new XMLHttpRequest();
-    xhttp.open("GET", "newIssue.php", true);
+    xhttp.open("GET", "scripts/newIssue.php", true);
     xhttp.send();
 
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            document.getElementById("results").innerHTML =
-                this.responseText;
+            document.getElementById("results").innerHTML = this.responseText;
 
         }
     };
-
-
-
 }
 
 function logout() {
@@ -131,7 +124,7 @@ function submitIssue() {
     results.append("Assigned", document.getElementsByName("Assigned")[0].value);
 	
     var xhr = new XMLHttpRequest();
-    xhr.open("POST", "linkIssue-php.php");
+    xhr.open("POST", "scripts/linkIssue-php.php");
 	
     xhr.onload = function (){
         document.getElementById("results").innerHTML = this.responseText;
@@ -151,7 +144,7 @@ function doLogin(){
     results.append("password", document.getElementsByName("password")[0].value);
     results.append("email", document.getElementsByName("email")[0].value);
 
-    xhr.open("POST", "./validation.php");
+    xhr.open("POST", "scripts/validation.php");
 	xhr.onload = function (){
 		if(this.responseText == "Administrator added a new user."){
 			userAddition("1");

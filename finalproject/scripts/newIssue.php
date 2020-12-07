@@ -15,7 +15,7 @@ array_splice($results, 0, 1);
 ?>
 
 
-<link rel="stylesheet" type="text/css" href="../styles/newIssue.css">
+<link rel="stylesheet" type="text/css" href="newIssue.css">
 <script src="scripts.js" type="text/javascript"></script>
 <h1>Create Issue</h1>
 <form id = "issue" onsubmit="return submitIssue()">

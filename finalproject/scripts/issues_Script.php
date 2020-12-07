@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once "./dbconfig.php";
+require_once "dbconfig.php";
 
 $stmt;
 

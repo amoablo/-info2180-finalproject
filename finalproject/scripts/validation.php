@@ -4,6 +4,7 @@ require_once "scriptsfunctions.php";
 require_once "login_dbconfig.php";
 
 $insert_mysqli = "INSERT INTO users(firstname, lastname, password, email, date_joined) VALUES (?, ?, ?, ?, ?) ";
+
 $insert_mysqli_stmt = mysqli_prepare($con,$insert_mysqli);
 
 

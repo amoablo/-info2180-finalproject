@@ -2,8 +2,8 @@
 
 session_start();
 
-require_once "./scriptsfunctions.php";
-require_once "./login_dbconfig.php";
+require_once "scriptsfunctions.php";
+require_once "login_dbconfig.php";
 
 if($_SERVER['REQUEST_METHOD'] == "POST"){
     $email = $_POST['email'];
@@ -21,13 +21,13 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
             $_SESSION['id'] = $row['id'];
             $_SESSION['email'] = $row['email'];
             $_SESSION['password'] = $row['password'];
-            redirect('../pages/index.php');
+            redirect('../index.php');
         }else{
 			$_SESSION['message'] = "Error. Please check your login credentials or consult a system adminsitrator.";
           
-            redirect('../pages/loginPrimaryPage.php');
+            redirect('../loginPrimaryPage.php');
         }
 
 }
 
- ?>
+?>

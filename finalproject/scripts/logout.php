@@ -9,6 +9,6 @@ if(isset($_SESSION['id'])){
     session_start();
 }
 
-redirect("../pages/loginPrimarypage.php");
+redirect("../loginPrimaryPage.php");
 
  ?>

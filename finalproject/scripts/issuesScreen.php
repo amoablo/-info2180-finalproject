@@ -1,4 +1,5 @@
 <link rel="stylesheet" type="text/css" href="../styles/issuesScreen.css">
+<script src="scripts.js" type="text/javascript"></script>
 <div id = "heading">
 <h1 id = "title">Issues</h1>
 <button id = "new_issue" onClick="issueAddition()">Create New Issue</button>
@@ -12,7 +13,5 @@
 </div>
 
 <div id = 'table'>
-
-
 
 </div>
