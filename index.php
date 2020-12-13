@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>INFO2180 Project 2</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    
 
 </head>
 
@@ -14,7 +15,6 @@
         <div class="container">
             <nav>
                 <p>BugMe Issue Tracker</p>
-                <p> User Login </p>
             </nav>
         </div>
     </header>
@@ -26,8 +26,8 @@
         <a href="#out">Logout</a>
     </section>
 
-    <div class="page">
-    <?php include('pages/login.php');?>
+    <div id="page">
+    <?php include('dashBoard.php');?>
     </div>
 </body>
 

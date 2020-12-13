@@ -6,7 +6,7 @@ session_start();
 <html lang="en" dir="pages/loginPrimarypage.php">
 <head>
     <title>User Log In</title>
-    <link rel="stylesheet" type"text/css" href="../styles/loginPrimarypage.css"/>
+    <link rel="stylesheet" typez="text/css" href="../styles/loginPrimarypage.css"/>
 	<script src="../scripts/scripts.js" type="text/javascript"></script>
 </head>
 <body>

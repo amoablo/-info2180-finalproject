@@ -6,8 +6,8 @@ session_start();
 <html lang="en" dir="loginPrimaryPage.php">
 <head>
     <title>User Log In</title>
-    <link rel="stylesheet" type"text/css" href="styles/loginPrimaryPage.css"/>
-	<script src="scripts/scripts.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="styles/loginPrimaryPage.css"/>
+
 </head>
 <body>
 
@@ -28,13 +28,13 @@ echo $alert = !empty($message) ? $message : "";
             <h1>Login Page</h1>
             <div class="form-group">
                 <label for="">Email Address</label>
-                <input type="text" class= "form-control" name="email" value="" placeholder="Please enter your email address" autocomplete="off" required>
+                <input type="text" class= "form-control" id="email" name="email" placeholder="Please enter your email address" autocomplete="off" required>
             </div>
             <div class="form-group">
                 <label for="">Password</label>
-                <input type="password" class= "form-control" name="password" value="" placeholder="Please enter your password" autocomplete="off" required>
+                <input type="password" class= "form-control" id="password" name="password" placeholder="Please enter your password" autocomplete="off" required>
             </div>
-            <input type="submit" class="btn" value="Login">
+            <input type="submit" id="submit" value="Login">
 
         </form>
 

@@ -1,8 +1,9 @@
 <?php
 
+header("Access-Control-Allow-Origin: *");
 $host = 'localhost';
 $username = 'finalproject_user';
-$password = 'password123';
+$pword = 'password123';
 $dbname = 'BugDB';
 
 
@@ -34,23 +35,26 @@ $dbname = 'BugDB';
      
     // There is at least one uppercase      // There is at least one number   // There is at least one lowercase  // Length of string is ay least 8
      if(preg_match('/[A-Z]/', $password) && preg_match('/[0-9]/', $password) && preg_match('/[a-z]/', $password) && strlen($password) >= 8 ){
-         $hash = password_hash($password,PASSWORD_DEFAULT);
          
+        $data = [$fname,$lname,password_hash($password,PASSWORD_DEFAULT),$email];
+     }else{
+        exit("Invalid password");
      }
-
+    
     //connect to database
     try {
-        $conn = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
-        echo "Connected to $dbname database at $host successfully.";
+        $conn = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $pword);
+        
         
     } catch (PDOException $pe) {
         die("Could not connect to the database $dbname :" . $pe->getMessage());
     }
 
     //specifying the fields and the table which the information will be inserted
-    $sql = "INSERT INTO users table (fname, lname, password, email) VALUES (?,?,?,?)";
+    $sql = "INSERT INTO users (firstname, lastname, password, email) VALUES (?,?,?,?)";
 
     //execution of insertion
     $stmt= $conn->prepare($sql);
     $stmt->execute($data);
+    echo "success";
 ?>

@@ -1,11 +1,9 @@
-<?php session_start();
-require_once "scripts/scriptsfunctions.php";?>
 <!DOCTYPE html>
 <html lang="en" dir="index.php">
 
 <head>
     <title></title>
-    <link rel="stylesheet" type="text/css" href="styles/index.css">
+    <link rel="stylesheet" type="text/css" href="styles/dashBoard.css">
     <script src="scripts/scripts.js" type="text/javascript"></script>
 </head>
 
@@ -20,11 +18,11 @@ require_once "scripts/scriptsfunctions.php";?>
             <img src="images/home icon.png" alt="Home Icon" />
             <h3>Home</h3>
         </div>
-        <div onClick="userAddition(<?php echo $_SESSION["id"]?>)">
+        <div>
             <img src="images/Add user.png" alt="Addition of a User - Icon" />
             <h3>Add User</h3>
         </div>
-        <div onClick="issueAddition()">
+        <div>
             <img src="images/issue.svg" alt="New Issue - Icon" />
             <h3>New Issue</h3>
         </div>

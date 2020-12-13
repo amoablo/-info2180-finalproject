@@ -36,6 +36,6 @@ require_once "../scripts/scriptsfunctions.php";?>
 
     </section>
     <section id="results">
-
+        <?php include_once "loginPrimaryPage.php"; ?>
     </section>
 </div>

@@ -34,6 +34,7 @@ function updateStatus(id, mode) {
 
 }
 
+
 function homePage() {
     var xhttp = new XMLHttpRequest();
     xhttp.open("GET", "scripts/issuesScreen.php", true);
@@ -41,7 +42,7 @@ function homePage() {
 
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200){
-			   document.getElementById("results").innerHTML = this.responseText;
+            
 
 			   document.getElementById("all").classList.add("activeButton");
 			   document.getElementById("open").classList.add("passiveButton");

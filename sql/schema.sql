@@ -18,12 +18,9 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `schema`
+-- Database: `BugDB`
+
 --
-
-CREATE DATABASE IF NOT EXISTS `schema` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `schema`;
-
 -- --------------------------------------------------------
 
 --
@@ -31,21 +28,21 @@ USE `schema`;
 --
 
 DROP TABLE IF EXISTS `users`;
-CREATE TABLE IF NOT EXISTS `users` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `firstname` varchar(35) NOT NULL DEFAULT '',
-  `lastname` varchar(35) NOT NULL DEFAULT '',
-  `password` varchar(30) NOT NULL,
-  `email` varchar(150) NOT NULL,
-  `date_joined` datetime(6) NOT NULL DEFAULT current_timestamp(6),
-  PRIMARY KEY (`id`)
+CREATE TABLE `users` (
+  `id` int(11) DEFAULT NULL ,
+  `firstname` varchar(35) DEFAULT NULL,
+  `lastname` varchar(35) DEFAULT NULL,
+  `password` varchar(150) DEFAULT NULL,
+  `email` varchar(50) DEFAULT NULL,
+  `date_joined` datetime(6) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`password`, `email`) VALUES (SHA1('password123'),'admin@project2.com');
+INSERT INTO `users` (`id`, `firstname`, `lastname`, `password`, `email`, `date_joined`) VALUES
+(NULL, 'admin', 'admin', '$2y$10$j1VZL4bytrDNk6TGvaTRceM', 'admin@gmail.com', NULL);
 COMMIT;
 
 LOCK TABLES `users` WRITE;
@@ -58,17 +55,16 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `issues`;
 CREATE TABLE IF NOT EXISTS `issues` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `title` varchar(100) NOT NULL,
-  `description` text NOT NULL,
-  `type` varchar(15) NOt NULL,
-  `priority` varchar(20) NOT NULL,
-  `status` varchar(15) NOT NULL,
-  `assigned_to` int(50) NOT NULL,
-  `created_by` int(30) NOT NULL,
+  `id` int(11) DEFAULT NULL,
+  `title` varchar(300) DEFAULT NULL,
+  `description` text DEFAULT NULL,
+  `type` varchar(15) DEFAULT NULL,
+  `priority` varchar(20) DEFAULT NULL,
+  `status` varchar(15) DEFAULT NULL,
+  `assigned_to` int(50) DEFAULT NULL,
+  `created_by` int(30) DEFAULT NULL,
   `created` datetime(6) NOT NULL DEFAULT current_timestamp(6),
-  `updated` datetime(6) NOT NULL DEFAULT current_timestamp(6),
-  PRIMARY KEY (`id`)
+  `updated` datetime(6) NOT NULL DEFAULT current_timestamp(6)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 COMMIT;
 

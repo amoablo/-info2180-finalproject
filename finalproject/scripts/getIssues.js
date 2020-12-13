@@ -5,11 +5,11 @@ window.onload = function(){
 
     button.addEventListener("click",function(el){
         el.preventDefault();
-        var url = "scripts/serverLogin.php";
-        var email = document.getElementById("mail").value;
-        var pword = document.getElementById("pword").value;
-        var e = document.getElementById("mail");
-        var p = document.getElementById("pword");
+        var url = "scripts/confirmLogin.php";
+        var email = document.getElementById("email").value;
+        var pword = document.getElementById("password").value;
+        var e = document.getElementById("email");
+        var p = document.getElementById("password");
 
         if(email == ""){
             color(el,e);
@@ -24,23 +24,22 @@ window.onload = function(){
         
             httpRequest.open('POST',url);
             httpRequest.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-            httpRequest.send("mail="+email+"&pword="+pword);
+            httpRequest.send("email="+email+"&password="+pword);
             httpRequest.onreadystatechange = function(){
                 if (httpRequest.readyState == this.DONE && httpRequest.status == 200){
                         var response = httpRequest.responseText;
                         console.log(response);
-                        if (response === "Valid_User"){
+                       if (response === "Valid_User"){
                             alert("Welcome");
-                            location.replace("index.php");
+                            myFunction();
                         }
                         else{
                             alert("error");
                             }
 
-                            return;
+                            return; 
                     } 
-            }
-    });
+            });
 
 
     function color(el,x){
@@ -57,3 +56,9 @@ window.onload = function(){
         }
     }
 }
+
+
+
+function myFunction() {
+    location.replace("index.php")
+  }

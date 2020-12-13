@@ -1,8 +1,135 @@
-.sidenav a {
-    padding: 6px 8px 6px 16px;
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+
+main{
+    height: 100%;
+}
+
+#maindiv{
+    display:flex;
+    flex-direction:column;
+    height:100%;
+}
+
+#topOfPage{
+    display: flex;
+    background-color: black;
+    padding-bottom: 25px;
+    align-items: center;
+}
+
+#headericon{
+    padding-left: 20px;
+    padding-top: 20px;
+    height: 70px;
+    height: 70px;
+}
+
+#toptext{
+    font-family: sans-serif;
+    padding-top: 25px;
+    color:white;
+    padding-left: 20px;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+
+#display{
+    display:grid;
+    grid-template-columns: 1fr 5fr;
+    height: 100%;
+}
+
+#leftside{
+    display: none;
+    grid-column:1;
+    background-color: rgb(214, 212, 212);
+    height: 100%;
+    gap: 10px;
+}
+
+#alllinks{
+    display:flex;
+    padding-top: 40px;
+    flex-direction: column;
+    gap:30px;
+}
+
+a{
+    font-family: sans-serif;
     text-decoration: none;
+    color:black;
+    font-weight: bold;
+}
+
+a:visited{
+    color:black;
+    text-decoration: none;
+}
+.icon{
+    height:20px;
+    width:20px;
+}
+
+.options{
+    display: flex;
+    padding-left: 25px;
+    align-items: center;
+    gap: 10px;
+}
+
+#rightside{
+    display:grid;
+    grid-column:2;
+    height: 100%;
+    display: flex;
+}
+
+#rightsideleft{
+    margin-left: 25px;
+    margin-top: 20px;
+    
+}
+
+/*ALL FORMS*/
+
+.formheading{
+    font-size: 40px;
+}
+
+label{
     font-size: 18px;
-    color: black;
-    display: block;
-  }
+}
+
+input{
+    width: 500px;
+    height: 28px;
+}
+
+.inputnbutton{
+    display:flex;
+    flex-direction: column;
+    gap:35px;
+
+}
+.allinput{
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+}
+
+#submit{
+    border: 0;
+    width: 115px;
+    height: 28px;
+    font-size: 15px;
+    color:white;
+    background-color: #1f55c7;
+    border-radius: 5px;
+    font-weight: bold;
+}
 
