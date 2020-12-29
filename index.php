@@ -1,34 +1,41 @@
+<?php session_start();
+require_once "scripts/scriptsfunctions.php";?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="index.php">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>INFO2180 Project 2</title>
-    <link rel="stylesheet" href="styles.css">
-
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="styles/index.css">
+    <script src="scripts/scripts.js" type="text/javascript"></script>
 </head>
 
-<body>
-    <header>
-        <div class="container">
-            <nav>
-                <p>BugMe Issue Tracker</p>
-                <p> User Login </p>
-            </nav>
+<header>
+    <img src="images/bug.png" alt="Main Bug Issue Icon" />
+    <h2>BugMe Issue Tracker</h2>
+</header>
+
+<div id="option-form">
+    <section id="options">
+        <div onClick="homePage()">
+            <img src="images/home icon.png" alt="Home Icon" />
+            <h3>Home</h3>
         </div>
-    </header>
+        <div onClick="userAddition(<?php echo $_SESSION["id"]?>)">
+            <img src="images/Add user.png" alt="Addition of a User - Icon" />
+            <h3>Add User</h3>
+        </div>
+        <div onClick="issueAddition()">
+            <img src="images/issue.svg" alt="New Issue - Icon" />
+            <h3>New Issue</h3>
+        </div>
+		<a href="scripts/logout.php" style="color: black; text-decoration: none;">
+        <div>
+            <img src="images/logout.svg" alt="Primary Logout - Icon" />
+            <h3>Logout</h3>
+        </div></a>
 
-    <section class="sidenav">
-        <a href="#Home">Home</a>
-        <a href="#add">Add User</a>
-        <a href="#issue">New Issue</a>
-        <a href="#out">Logout</a>
     </section>
+    <section id="results">
 
-    <div class="page">
-    <?php include('pages/login.php');?>
-    </div>
-</body>
-
-</html>
+    </section>
+</div>

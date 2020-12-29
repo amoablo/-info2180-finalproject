@@ -35,9 +35,9 @@ CREATE TABLE IF NOT EXISTS `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `firstname` varchar(35) NOT NULL DEFAULT '',
   `lastname` varchar(35) NOT NULL DEFAULT '',
-  `password` varchar(30) NOT NULL,
+  `password` varchar(150) NOT NULL,
   `email` varchar(150) NOT NULL,
-  `date_joined` datetime(6) NOT NULL DEFAULT current_timestamp(6),
+  `date_joined` datetime,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -61,13 +61,13 @@ CREATE TABLE IF NOT EXISTS `issues` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(100) NOT NULL,
   `description` text NOT NULL,
-  `type` varchar(15) NOt NULL,
+  `type` varchar(15) NOT NULL,
   `priority` varchar(20) NOT NULL,
   `status` varchar(15) NOT NULL,
   `assigned_to` int(50) NOT NULL,
   `created_by` int(30) NOT NULL,
-  `created` datetime(6) NOT NULL DEFAULT current_timestamp(6),
-  `updated` datetime(6) NOT NULL DEFAULT current_timestamp(6),
+  `created` datetime,
+  `updated` datetime,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 COMMIT;
